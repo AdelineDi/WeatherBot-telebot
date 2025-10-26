@@ -17,7 +17,7 @@ def get_weather(message):
         temp = data['main']['temp']
         bot.reply_to(message, f'Погода в данный момент: {data["main"]["temp"]}')
 
-        image = 'cloud.png' if temp > 5.0 else 'sun.png'
+        image = 'sun.png' if temp > 5.0 else 'cloud.png'
         file = open('./' + image, 'rb')
         bot.send_photo(message.chat.id, file)
     else:
